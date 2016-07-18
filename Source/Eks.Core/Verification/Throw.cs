@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Eks.Core.Verification
 {
-    public static class Verify
+    public static class Throw
     {
-        public static void IsNull(object o, string parameterName = null, string message = null)
+        public static void IfNull(object o, string parameterName = null, string message = null)
         {
             if (o == null)
             {

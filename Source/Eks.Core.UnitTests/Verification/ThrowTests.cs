@@ -5,39 +5,39 @@ using Xunit;
 
 namespace Eks.Core.UnitTests.Verification
 {
-    public class VerifyTests
+    public class ThrowTests
     {
-        public class IsNullTests
+        public class IfNullTests
         {
             [Fact]
             public void IsNull_ExceptionThrown()
             {
-                Action action = () => Verify.IsNull(null);
+                Action action = () => Throw.IfNull(null);
                 action.ShouldThrow<ArgumentNullException>().And.ParamName.Should().BeNull();
             }
 
             [Fact]
             public void SimpleType_NoExceptionThrown()
             {
-                Action action = () => Verify.IsNull(0);
+                Action action = () => Throw.IfNull(0);
                 action.ShouldNotThrow<ArgumentNullException>();
             }
 
             [Fact]
             public void ObjectType_NoExceptionThrown()
             {
-                Action action = () => Verify.IsNull(new object());
+                Action action = () => Throw.IfNull(new object());
                 action.ShouldNotThrow<ArgumentNullException>();
             }
         }
 
-        public class IsNullParameterNameTests
+        public class IfNullParameterNameTests
         {
             [Fact]
             public void IsNull_ExceptionThrown()
             {
                 object parameter = null;
-                Action action = () => Verify.IsNull(parameter, nameof(parameter));
+                Action action = () => Throw.IfNull(parameter, nameof(parameter));
                 action.ShouldThrow<ArgumentNullException>().And.ParamName.Should().Be(nameof(parameter));
             }
 
@@ -45,7 +45,7 @@ namespace Eks.Core.UnitTests.Verification
             public void SimpleType_NoExceptionThrown()
             {
                 var parameter = 0;
-                Action action = () => Verify.IsNull(parameter, nameof(parameter));
+                Action action = () => Throw.IfNull(parameter, nameof(parameter));
                 action.ShouldNotThrow<ArgumentNullException>();
             }
 
@@ -53,18 +53,18 @@ namespace Eks.Core.UnitTests.Verification
             public void ObjectType_NoExceptionThrown()
             {
                 var parameter = new object();
-                Action action = () => Verify.IsNull(parameter, nameof(parameter));
+                Action action = () => Throw.IfNull(parameter, nameof(parameter));
                 action.ShouldNotThrow<ArgumentNullException>();
             }
         }
 
-        public class IsNullParameterNamMessageeTests
+        public class IfNullParameterNamMessageeTests
         {
             [Fact]
             public void IsNull_ExceptionThrown()
             {
                 object parameter = null;
-                Action action = () => Verify.IsNull(parameter, nameof(parameter), "Parameter should not be null");
+                Action action = () => Throw.IfNull(parameter, nameof(parameter), "Parameter should not be null");
                 action.ShouldThrow<ArgumentNullException>().And.Message.Should().Be("Parameter should not be null\r\nParameter name: parameter");
             }
         }
