@@ -1,0 +1,1 @@
+C:\Software\nuget pack .\Eks.Core.csproj -Symbols -Properties Configuration=Release -Version 0.0.1-beta
