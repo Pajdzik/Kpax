@@ -1,9 +1,9 @@
 ﻿using System;
-using Eks.Core.Network.Uri;
+using Eks.Core.Network;
 using FluentAssertions;
 using Xunit;
 
-namespace Eks.Core.UnitTests.Network.Uri
+namespace Eks.Core.UnitTests.Network
 {
     public class UriCreatorTests
     {
@@ -95,7 +95,7 @@ namespace Eks.Core.UnitTests.Network.Uri
             [Fact]
             public void OneParameterAdded_ProperUriReturned()
             {
-                var uri = UriCreator.Create().WithHost("host").AddParameter("param", "value").BuildString();
+                var uri = UriCreator.Create().WithHost("host").AddQueryParameter("param", "value").BuildString();
                 uri.Should().Be("//host/?param=value");
             }
 
@@ -105,7 +105,7 @@ namespace Eks.Core.UnitTests.Network.Uri
                 var uri = UriCreator.Create()
                     .WithHost("host")
                     .AddPath("path")
-                    .AddParameter("param", "value")
+                    .AddQueryParameter("param", "value")
                     .BuildString();
                 uri.Should().Be("//host/path?param=value");
             }
@@ -116,8 +116,8 @@ namespace Eks.Core.UnitTests.Network.Uri
                 var uri = UriCreator.Create()
                     .WithHost("host")
                     .AddPath("path")
-                    .AddParameter("param", "value")
-                    .AddParameter(new QueryParameter("param2", "value2"))
+                    .AddQueryParameter("param", "value")
+                    .AddQueryParameter(new QueryParameter("param2", "value2"))
                     .BuildString();
                 uri.Should().Be("//host/path?param=value&param2=value2");
             }
@@ -129,26 +129,76 @@ namespace Eks.Core.UnitTests.Network.Uri
             public void FragmentSet_ProperUriReturned()
             {
                 var uri = UriCreator.Create().WithHost("host").WithFragment("fragment").BuildString();
-                uri.Should().Be("scheme://host");
+                uri.Should().Be("//host/#fragment");
+            }
+        }
+
+        public class CtroUriTests
+        {
+            [Fact]
+            public void UriHostOnly_HostSet()
+            {
+                var uri = new Uri("//abcd");
+                var uriCreator = UriCreator.FromUri(uri);
+                uriCreator.Host.Should().Be("abcd");
+            }
+
+            [Fact]
+            public void UriSchemeHostOnly_SchemeSet()
+            {
+                var uri = new Uri("http://abcd");
+                var uriCreator = UriCreator.FromUri(uri);
+                uriCreator.Host.Should().Be("abcd");
+                uriCreator.Scheme.Should().Be("http");
+            }
+
+            [Fact]
+            public void UriHostPortOnly_PortSet()
+            {
+                var uri = new Uri("//abcd:1234");
+                var uriCreator = UriCreator.FromUri(uri);
+                uriCreator.Host.Should().Be("abcd");
+                uriCreator.Port.Should().Be(1234);
+            }
+
+            [Fact]
+            public void UriHostPathsOnly_PathsSet()
+            {
+                var uri = new Uri("//abcd/path1/path2");
+                var uriCreator = UriCreator.FromUri(uri);
+                uriCreator.Paths.Should().ContainInOrder("path1", "path2");
+            }
+
+            [Fact]
+            public void UriHostQueryOnly_QuerySet()
+            {
+                var uri = new Uri("http://abcd/path?param1=a&param2=b");
+                var uriCreator = UriCreator.FromUri(uri);
+                uriCreator.QueryParameters.Count.Should().Be(2);
+                uriCreator.QueryParameters.Should()
+                    .ContainInOrder(new QueryParameter("param1", "a"), new QueryParameter("param2", "b"));
             }
         }
 
         [Fact]
-        public void EveryParameterPassed_ProperUriReturned()
+        public
+        void EveryParameterPassed_ProperUriReturned()
         {
             var uri = UriCreator.Create()
                 .WithHost("host")
                 .AddPath("path1")
                 .AddPath("path2")
-                .AddParameter("param1", "val1")
-                .AddParameter("param2", "val2")
+                .AddQueryParameter("param1", "val1")
+                .AddQueryParameter("param2", "val2")
                 .WithPort(1234)
                 .WithUser("user")
                 .WithPassword("pass")
                 .WithScheme("scheme")
                 .BuildString();
 
-            uri.Should().Be("scheme://user:pass@host:1234/path1/path2?param1=val1&param2=val2");
+            uri.Should
+                ().
+                Be("scheme://user:pass@host:1234/path1/path2?param1=val1&param2=val2");
         }
     }
 }
