@@ -59,7 +59,7 @@ namespace Eks.Core.Network
                 return new List<string>();
             }
 
-            return absolutePath.Split('/').ToList();
+            return absolutePath.Split(new [] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
         }
 
         public static UriCreator Create()

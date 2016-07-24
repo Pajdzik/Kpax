@@ -181,8 +181,7 @@ namespace Eks.Core.UnitTests.Network
         }
 
         [Fact]
-        public
-        void EveryParameterPassed_ProperUriReturned()
+        public void EveryParameterPassed_ProperUriReturned()
         {
             var uri = UriCreator.Create()
                 .WithHost("host")
@@ -199,6 +198,15 @@ namespace Eks.Core.UnitTests.Network
             uri.Should
                 ().
                 Be("scheme://user:pass@host:1234/path1/path2?param1=val1&param2=val2");
+        }
+
+        [Fact]
+        public void RapGeniusUri()
+        {
+            var uri = new Uri("https://api.genius.com/search?q=Kendrick%20Lamar");
+            var actualUri = UriCreator.FromUri(uri).BuildUri();
+
+            actualUri.Should().Be(uri);
         }
     }
 }
