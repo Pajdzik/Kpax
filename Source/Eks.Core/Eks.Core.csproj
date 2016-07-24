@@ -40,7 +40,7 @@
     <Compile Include="Network\Uri\QueryParameter.cs" />
     <Compile Include="Network\Uri\UriCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Verification\Throw.cs" />
+    <Compile Include="Verification\Throws.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Eks.Core.Verification
 {
-    public static class Throw
+    public static class Throws
     {
-        public static void IfNull(object o, string parameterName = null, string message = null)
+        public static void IfNull(object parameter, string parameterName = null, string message = null)
         {
-            if (o == null)
+            if (parameter == null)
             {
                 throw new ArgumentNullException(parameterName, message);
             }
