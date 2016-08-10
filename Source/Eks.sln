@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.25123.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eks.Core", "Eks.Core\Eks.Core.csproj", "{D7B59D6F-94AF-4182-9867-60AC10781B4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eks.Core.UnitTests", "Eks.Core.UnitTests\Eks.Core.UnitTests.csproj", "{506F0E76-DE32-47BD-AA0E-6CF0F21A9E70}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Eks.Core.NuGet", "Eks.Core.NuGet\Eks.Core.NuGet.nuproj", "{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{506F0E76-DE32-47BD-AA0E-6CF0F21A9E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506F0E76-DE32-47BD-AA0E-6CF0F21A9E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506F0E76-DE32-47BD-AA0E-6CF0F21A9E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
