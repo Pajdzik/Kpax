@@ -28,6 +28,7 @@ namespace Eks.Core.Network
             return this.Equals((QueryParameter) obj);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0")]
         protected bool Equals(QueryParameter other)
         {
             return string.Equals(this.Key, other.Key) && string.Equals(this.Value, other.Value);
