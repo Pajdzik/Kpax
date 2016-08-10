@@ -38,6 +38,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Math\RoundingExtensionsTests.cs" />
     <Compile Include="Network\UriCreatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Verification\ThrowTests.cs" />
