@@ -27,12 +27,30 @@ namespace Eks.Core.UnitTests.Math
             }
 
             [Fact]
-            public void RoundToSignificantDigits_ReturnsThreeSignificantDigits_WhenThreePassed()
+            public void RoundToSignificantDigits_ReturnsThreeSignificantDigits_WhenThreeSignificantDigitsPassed()
             {
                 int digit = 123456;
                 var result = RoundingExtensions.RoundToSignificantDigits(digit, 3);
 
                 result.Should().Be(123000);
+            }
+
+            [Fact]
+            public void RoundToSignificantDigits_ReturnsThreeSignificantDigits_WhenNineDigitsPassed()
+            {
+                int digit = 123456789;
+                var result = RoundingExtensions.RoundToSignificantDigits(digit);
+
+                result.Should().Be(123000000);
+            }
+
+            [Fact]
+            public void RoundToSignificantDigits_ReturnsThreeSignificantDigits_WhenNineDigitsPassed2()
+            {
+                int digit = 1020000;
+                var result = RoundingExtensions.RoundToSignificantDigits(digit);
+
+                result.Should().Be(1000000);
             }
         }
     }

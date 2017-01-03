@@ -10,7 +10,6 @@ namespace Eks.Core.Maths
             return (int)RoundingExtensions.RoundToSignificantDigits((double)number, digits);
         }
 
-
         public static int RoundToSignificantDigits(this int number, int significantDigits)
         {
             return (int)RoundingExtensions.RoundToSignificantDigits((double)number, significantDigits);
