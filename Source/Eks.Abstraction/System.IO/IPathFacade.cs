@@ -2,6 +2,6 @@
 {
     public interface IPathFacade
     {
-        object GetFileName(string path);
+        string GetFileName(string path);
     }
 }
