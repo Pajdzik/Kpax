@@ -2,7 +2,7 @@
 {
     using global::System.IO;
 
-    public class DirectoryProxy : IDirectoryProxy
+    public class DirectoryFacade : IDirectoryFacade
     {
         public bool Exists(string path)
         {

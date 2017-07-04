@@ -1,6 +1,6 @@
 ﻿namespace Eks.Abstraction.System.IO
 {
-    public interface IDirectoryProxy
+    public interface IDirectoryFacade
     {
         bool Exists(string path);
 
