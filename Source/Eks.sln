@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eks.Core.UnitTests", "Eks.C
 EndProject
 Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Eks.Core.NuGet", "Eks.Core.NuGet\Eks.Core.NuGet.nuproj", "{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eks.Abstraction", "Eks.Abstraction\Eks.Abstraction.csproj", "{B13A4576-8288-4818-8B74-02A49A0A2564}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Eks.Abstraction.NuGet", "Eks.Abstraction.NuGet\Eks.Abstraction.NuGet.nuproj", "{ED5B6063-EFBF-4C80-9F0D-A5E7B7486246}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF17D85B-097B-4081-BE31-6F5E2C72AEC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13A4576-8288-4818-8B74-02A49A0A2564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13A4576-8288-4818-8B74-02A49A0A2564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13A4576-8288-4818-8B74-02A49A0A2564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13A4576-8288-4818-8B74-02A49A0A2564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5B6063-EFBF-4C80-9F0D-A5E7B7486246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5B6063-EFBF-4C80-9F0D-A5E7B7486246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5B6063-EFBF-4C80-9F0D-A5E7B7486246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5B6063-EFBF-4C80-9F0D-A5E7B7486246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

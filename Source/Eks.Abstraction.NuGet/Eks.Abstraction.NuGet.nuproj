@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>ed5b6063-efbf-4c80-9f0d-a5e7b7486246</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VersionDependsOn>$(VersionDependsOn);GetNuPkgVersion</VersionDependsOn>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>Eks.Abstraction</Id>
+    <Title>Eks.Abstraction</Title>
+    <Authors>Kamil Pajdzik</Authors>
+    <Owners>Kamil Pajdzik</Owners>
+    <Summary>Eks.Abstraction</Summary>
+    <Description>Eks.Abstraction</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>
+    </ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright © Kamil Pajdzik</Copyright>
+    <Tags>Eks.Abstraction</Tags>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eks.Abstraction\Eks.Abstraction.csproj" />
+  </ItemGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+  <Import Project="..\packages\Nerdbank.GitVersioning.1.5.28-rc\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.1.5.28-rc\build\portable-net+win+wpa+wp+sl+netmf+MonoAndroid+MonoTouch+Xamarin.iOS\Nerdbank.GitVersioning.targets')" />
+  <Target Name="GetNuPkgVersion" DependsOnTargets="GetBuildVersion">
+    <PropertyGroup>
+      <Version>$(NuGetPackageVersion)</Version>
+      <NuSpecProperties>$(NuSpecProperties);GitCommitIdShort=$(GitCommitIdShort)</NuSpecProperties>
+    </PropertyGroup>
+  </Target>
+</Project>
