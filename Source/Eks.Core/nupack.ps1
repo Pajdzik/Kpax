@@ -1,2 +1,0 @@
- & "C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" .\Eks.Core.csproj /p:PublicRelease=True /t:Clean,Build /p:Configuration=Release
-C:\Software\nuget pack .\Eks.Core.csproj -Symbols -Properties Configuration=Release
