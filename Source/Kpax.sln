@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpax.Core", "Kpax.Core\Kpax.Core.csproj", "{FF6EDC76-258F-48EC-A89C-39D4A8DC8510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kpax.Core", "Kpax.Core\Kpax.Core.csproj", "{FF6EDC76-258F-48EC-A89C-39D4A8DC8510}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpax.Core.UnitTests", "Kpax.Core.UnitTests\Kpax.Core.UnitTests.csproj", "{DCDF795A-628D-4785-A371-A2E7E88E91E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kpax.Core.UnitTests", "Kpax.Core.UnitTests\Kpax.Core.UnitTests.csproj", "{DCDF795A-628D-4785-A371-A2E7E88E91E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kpax.Abstraction", "Kpax.Abstraction\Kpax.Abstraction.csproj", "{45CE4091-6CA2-4D27-8D9E-D44B4472379B}"
 EndProject
