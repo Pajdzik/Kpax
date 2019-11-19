@@ -1,6 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>Kpax.Core</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Kamil Pajdzik</Authors>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
