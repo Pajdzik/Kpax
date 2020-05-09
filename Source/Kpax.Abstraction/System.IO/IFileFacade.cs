@@ -12,5 +12,7 @@
         string ReadAllText(string path);
 
         IEnumerable<string> ReadLines(string path);
+
+        bool IsFile(string path);
     }
 }
