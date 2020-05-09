@@ -24,5 +24,12 @@
         {
             return File.ReadLines(path);
         }
+
+        public bool IsFile(string path)
+        {
+            FileAttributes attr = File.GetAttributes(path);
+
+            return (attr & FileAttributes.Directory) == 0;
+        }
     }
 }

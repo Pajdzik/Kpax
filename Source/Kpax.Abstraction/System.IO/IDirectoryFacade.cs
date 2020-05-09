@@ -5,5 +5,7 @@
         bool Exists(string path);
 
         string[] GetFiles(string path);
+
+        bool IsDirectory(string path);
     }
 }
