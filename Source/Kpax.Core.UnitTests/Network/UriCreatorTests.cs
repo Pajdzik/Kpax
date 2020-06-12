@@ -138,7 +138,7 @@ namespace Kpax.Core.UnitTests.Network
             [Fact]
             public void UriHostOnly_HostSet()
             {
-                var uri = new Uri("//abcd");
+                var uri = new Uri("file://abcd");
                 var uriCreator = UriCreator.FromUri(uri);
                 uriCreator.Host.Should().Be("abcd");
             }
