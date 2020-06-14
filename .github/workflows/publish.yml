@@ -21,7 +21,7 @@ jobs:
           dotnet-version: 3.1.200
           
       - name: Debug project name
-        run: echo 'Source/{{ matrix.project }}/{{ matrix.project }}.csproj'
+        run: echo 'Source/${{ matrix.project }}/${{ matrix.project }}.csproj'
 
       # Publish
       - name: Publish {{ matrix.project }} on version change
@@ -29,7 +29,7 @@ jobs:
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: Source/{{ matrix.project }}/{{ matrix.project }}.csproj
+          PROJECT_FILE_PATH: Source/${{ matrix.project }}/${{ matrix.project }}.csproj
           
           # API key to authenticate with NuGet server
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
