@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.200
+          
+      - name: Debug project name
+        run: echo 'Source/{{ matrix.project }}/{{ matrix.project }}.csproj'
 
       # Publish
       - name: Publish {{ matrix.project }} on version change
