@@ -7,6 +7,9 @@ jobs:
   publish:
     name: Build, pack & publish
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ["Source/Kpax.Abstraction/Kpax.Abstraction.csproj", Source/Kpax.Core/Kpax.Core.csproj]
     steps:
       - uses: actions/checkout@v2
 
@@ -16,12 +19,12 @@ jobs:
           dotnet-version: 3.1.200
 
       # Publish
-      - name: publish on version change
+      - name: Publish {{ matrix.project }} on version change
         id: publish_nuget
         uses: rohith/publish-nuget@v2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: Source/Kpax.Abstraction/Kpax.Abstraction.csproj
+          PROJECT_FILE_PATH: {{ matrix.project }}
           
           # API key to authenticate with NuGet server
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
