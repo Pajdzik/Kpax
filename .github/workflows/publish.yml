@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: ["Source/Kpax.Abstraction/Kpax.Abstraction.csproj", Source/Kpax.Core/Kpax.Core.csproj]
+        project: ["Source/Kpax.Abstraction/Kpax.Abstraction.csproj", "Source/Kpax.Core/Kpax.Core.csproj"]
     steps:
       - uses: actions/checkout@v2
 
