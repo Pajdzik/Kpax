@@ -1,7 +1,6 @@
 ﻿namespace Kpax.Abstraction.System.IO
 {
     using global::System.Collections.Generic;
-    using global::System;
 
     public interface IFileFacade
     {
@@ -14,5 +13,7 @@
         IEnumerable<string> ReadLines(string path);
 
         bool IsFile(string path);
+
+        IFileInfo GetFileInfo(string path);
     }
 }
