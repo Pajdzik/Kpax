@@ -31,5 +31,10 @@
 
             return (attr & FileAttributes.Directory) == 0;
         }
+
+        public IFileInfo GetFileInfo(string path)
+        {
+            return new FileInfoFacade(path);
+        }
     }
 }
