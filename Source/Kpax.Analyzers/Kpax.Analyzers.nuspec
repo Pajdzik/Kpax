@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Kpax.Analyzers</id>
+    <version>1.0.0</version>
+    <authors>Pajdzik</authors>
+    <owners>Pajdzik</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Pajdzik/Kpax/tree/master/Source/Kpax.Analyzers</projectUrl>
+    <description>Various analyzers</description>
+    <copyright>Copyright 2020</copyright>
+  </metadata>
+  <files>
+    <file src="**" />
+  </files>
+</package>  
