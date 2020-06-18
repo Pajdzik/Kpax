@@ -36,3 +36,17 @@ jobs:
 
           # Flag to toggle pushing symbols along with nuget package to the server, disabled by default
           INCLUDE_SYMBOLS: true
+
+  publish-assets:
+    name: Pack & publish assets
+    runs-on: ubuntu-latest
+    working-directory: 'Source/Kpax.Analyzers'
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.NUGET_API_KEY }}
+        nuget-version: latest
+    - run: nuget pack
+    - run: nuget push ./*.nupkg -src https://nuget.org -SkipDuplicate  
