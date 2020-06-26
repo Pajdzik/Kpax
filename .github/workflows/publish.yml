@@ -48,4 +48,4 @@ jobs:
         nuget-api-key: ${{ secrets.NUGET_API_KEY }}
         nuget-version: latest
     - run: nuget pack Source/Kpax.Analyzers
-    - run: nuget push Source/Kpax.Analyzers/*.nupkg -src https://nuget.org -SkipDuplicate  
+    - run: nuget push Source/Kpax.Analyzers/*.nupkg -src https://nuget.org -SkipDuplicate -apiKey ${{secrets.NUGET_API_KEY}}
