@@ -40,7 +40,6 @@ jobs:
   publish-assets:
     name: Pack & publish assets
     runs-on: ubuntu-latest
-    working-directory: 'Source/Kpax.Analyzers'
 
     steps:
     - uses: actions/checkout@master
@@ -48,5 +47,5 @@ jobs:
       with:
         nuget-api-key: ${{ secrets.NUGET_API_KEY }}
         nuget-version: latest
-    - run: nuget pack
-    - run: nuget push ./*.nupkg -src https://nuget.org -SkipDuplicate  
+    - run: nuget pack Source/Kpax.Analyzers
+    - run: nuget push Source/Kpax.Analyzers/*.nupkg -src https://nuget.org -SkipDuplicate  
