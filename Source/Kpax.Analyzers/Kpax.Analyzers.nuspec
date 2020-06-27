@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Kpax.Analyzers</id>
-    <version>1.0.3</version>
+    <version>1.1.0</version>
     <authors>Pajdzik</authors>
     <owners>Pajdzik</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
