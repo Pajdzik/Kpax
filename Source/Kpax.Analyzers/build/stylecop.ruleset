@@ -78,10 +78,12 @@
         <Rule Id="IDE0003" Action="None" />
     </Rules>
     <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+        <Rule Id="SA1202" Action="None" />
         <Rule Id="SA1305" Action="Warning" />
         <Rule Id="SA1412" Action="Warning" />
         <Rule Id="SA1600" Action="None" />
         <Rule Id="SA1609" Action="Warning" />
+        <Rule Id="SA1633" Action="None" />
     </Rules>
     <Rules AnalyzerId="DocumentationAnalyzers" RuleNamespace="DocumentationAnalyzers">
         <Rule Id="DOC100" Action="Warning" />
