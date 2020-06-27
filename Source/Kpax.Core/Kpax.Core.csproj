@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageId>Kpax.Core</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Kamil Pajdzik</Authors>
   </PropertyGroup>
   <ItemGroup>
@@ -17,5 +17,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Kpax.Analyzers" Version="1.1.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

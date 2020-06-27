@@ -1,4 +1,4 @@
-namespace Kpax.Abstraction.System.IO
+﻿namespace Kpax.Abstraction.System.IO
 {
     using global::System.IO;
 
@@ -11,11 +11,11 @@ namespace Kpax.Abstraction.System.IO
         public FileInfoFacade(FileInfo fileInfo) => this.fileInfo = fileInfo;
 
         public bool IsReadOnly
-        { 
+        {
             get => this.fileInfo.IsReadOnly;
             set => this.fileInfo.IsReadOnly = value;
         }
-        
+
         public bool Exists => this.fileInfo.Exists;
 
         public string DirectoryName => this.fileInfo.DirectoryName;
@@ -35,7 +35,7 @@ namespace Kpax.Abstraction.System.IO
         {
             return new FileInfoFacade(this.fileInfo.CopyTo(destFileName, overwrite));
         }
-         
+
         public IFileInfo CopyTo(string destFileName)
         {
             return new FileInfoFacade(this.fileInfo.CopyTo(destFileName));
@@ -80,7 +80,7 @@ namespace Kpax.Abstraction.System.IO
         {
             return this.fileInfo.OpenRead();
         }
-        
+
         public StreamReader OpenText()
         {
             return this.fileInfo.OpenText();

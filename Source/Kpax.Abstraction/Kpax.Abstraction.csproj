@@ -2,10 +2,11 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <PackageId>Kpax.Abstraction</PackageId>
-    <Version>1.3.0</Version>
+    <Version>1.3.1</Version>
     <Authors>Kamil Pajdzik</Authors>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Kpax.Analyzers" Version="1.1.1" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3" />
   </ItemGroup>
 </Project>
