@@ -1,4 +1,4 @@
-namespace Kpax.Abstraction.System.IO
+﻿namespace Kpax.Abstraction.System.IO
 {
     using global::System.IO;
 

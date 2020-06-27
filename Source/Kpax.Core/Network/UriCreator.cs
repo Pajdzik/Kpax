@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using Kpax.Core.Verification;
-
-namespace Kpax.Core.Network
+﻿namespace Kpax.Core.Network
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Globalization;
+    using System.Linq;
+    using System.Text;
+    using Kpax.Core.Verification;
+
     /// <summary>
     /// Builds an URI in following format
     /// scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
@@ -25,7 +25,7 @@ namespace Kpax.Core.Network
         {
             this.Fragment = uri.Fragment;
             this.Host = uri.Host;
-            this.Port = (uri.Port == -1 ? null : (int?) uri.Port);
+            this.Port = uri.Port == -1 ? null : (int?)uri.Port;
             this.Scheme = uri.Scheme;
             this.queryParameters = ParseParameters(uri.Query);
             this.paths = ParsePaths(uri.AbsolutePath);
@@ -59,7 +59,7 @@ namespace Kpax.Core.Network
                 return new List<string>();
             }
 
-            return absolutePath.Split(new [] {'/'}, StringSplitOptions.RemoveEmptyEntries).ToList();
+            return absolutePath.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         }
 
         public static UriCreator Create()
@@ -69,9 +69,12 @@ namespace Kpax.Core.Network
 
         private void InitUsernameAndPassword(string userInfo)
         {
-            if (userInfo.Length <= 0) return;
-            var index = userInfo.IndexOf(':');
+            if (userInfo.Length <= 0)
+            {
+                return;
+            }
 
+            var index = userInfo.IndexOf(':');
             if (index != -1)
             {
                 this.Password = userInfo.Substring(index + 1);
@@ -191,12 +194,6 @@ namespace Kpax.Core.Network
 
             return uri.ToString();
         }
-
-        //public UriCreator DeepClone()
-        //{
-        //    var clone = (UriCreator) this.MemberwiseClone();
-        //    clone.
-        //}
 
         private void AppendSlash(StringBuilder uri)
         {

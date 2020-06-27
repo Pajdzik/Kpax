@@ -1,12 +1,12 @@
-﻿using System;
-
-namespace Kpax.Core.Maths
+﻿namespace Kpax.Core.Maths
 {
+    using System;
+
     public static class RoundingExtensions
     {
         public static int RoundToSignificantDigits(this int number)
         {
-            var digits = GetNumberDigitCount(number)/3;
+            var digits = GetNumberDigitCount(number) / 3;
             return (int)RoundingExtensions.RoundToSignificantDigits((double)number, digits);
         }
 
@@ -17,7 +17,7 @@ namespace Kpax.Core.Maths
 
         public static long RoundToSignificantDigits(this long number, int significantDigits)
         {
-            return (long) RoundingExtensions.RoundToSignificantDigits((double) number, significantDigits);
+            return (long)RoundingExtensions.RoundToSignificantDigits((double)number, significantDigits);
         }
 
         public static double RoundToSignificantDigits(this double number, int significantDigits)
@@ -35,7 +35,7 @@ namespace Kpax.Core.Maths
             var numberOfDigits = Math.Floor(Math.Log10(Math.Abs(number))) + 1;
             var scale = Math.Pow(10, numberOfDigits);
 
-            return scale*Math.Round(number/scale, significantDigits);
+            return scale * Math.Round(number / scale, significantDigits);
         }
 
         private static int GetNumberDigitCount(int number)
@@ -45,7 +45,7 @@ namespace Kpax.Core.Maths
                 return 1;
             }
 
-            return (int) (Math.Floor(Math.Log10(Math.Abs(number))) + 1);
+            return (int)(Math.Floor(Math.Log10(Math.Abs(number))) + 1);
         }
     }
 }

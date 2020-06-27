@@ -1,11 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Runtime.CompilerServices;
-
-namespace Kpax.Core.Collections
+﻿namespace Kpax.Core.Collections
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using System.Runtime.CompilerServices;
+
     public class TwoWayDictionary<TKey, TValue> : IDictionary<TKey, TValue>
     {
         private Dictionary<TKey, TValue> forwardDictionary;
@@ -16,6 +16,16 @@ namespace Kpax.Core.Collections
             this.forwardDictionary = new Dictionary<TKey, TValue>();
             this.reverseDictionary = new Dictionary<TValue, TKey>();
         }
+
+        public ICollection<TKey> Keys => this.forwardDictionary.Keys;
+
+        public ICollection<TValue> Values => this.forwardDictionary.Values;
+
+        public int Count => this.forwardDictionary.Count;
+
+        public bool IsReadOnly =>
+            ((ICollection<KeyValuePair<TKey, TValue>>)this.forwardDictionary).IsReadOnly
+            || ((ICollection<KeyValuePair<TValue, TKey>>)this.reverseDictionary).IsReadOnly;
 
         public TValue this[TKey key]
         {
@@ -46,16 +56,6 @@ namespace Kpax.Core.Collections
                 this.forwardDictionary[value] = key;
             }
         }
-
-        public ICollection<TKey> Keys => this.forwardDictionary.Keys;
-
-        public ICollection<TValue> Values => this.forwardDictionary.Values;
-
-        public int Count => this.forwardDictionary.Count;
-
-        public bool IsReadOnly =>
-            ((ICollection<KeyValuePair<TKey, TValue>>)this.forwardDictionary).IsReadOnly
-            || ((ICollection<KeyValuePair<TValue, TKey>>)this.reverseDictionary).IsReadOnly;
 
         public void Add(TKey key, TValue value)
         {
@@ -169,7 +169,7 @@ namespace Kpax.Core.Collections
             {
                 bool reverseSuccessful = this.reverseDictionary.Remove(value);
                 return reverseSuccessful;
-            }    
+            }
 
             return false;
         }
